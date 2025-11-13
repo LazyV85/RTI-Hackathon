@@ -14,33 +14,50 @@ For running this Act,
 ## Challenges 
 
 ### 1. Enrich Manufacturing data with AnomalyFlag column and datatype changes
-    Hint: Use SQL transformation on DefectProbability  column in stream – DefectProbability>0.1 = Anomaly.
-    Hint: SQL Operator by default works only if there are no other operators in this stream. Can a DerivedStream help?
-    Hint: Be patient and let the data come into the Derived Stream
-    Hint: Keep all fields excepts the last 3: EventProcessedUtcTime, PartitionId, EventEnqueuedUtcTime. 
+<details>
+<summary>Hint!</summary>
+
+Use SQL transformation on DefectProbability  column in stream – DefectProbability>0.1 = Anomaly
+
+SQL Operator by default works only if there are no other operators in this stream. Can a DerivedStream help?
+
+Be patient and let the data come into the Derived Stream
+
+Keep all fields excepts the last 3: EventProcessedUtcTime, PartitionId, EventEnqueuedUtcTime.
+
+</details>
 
 ### 2. Ingest Manufacturing data
 Assets, Operators, and sites are static data you need refer from Lakehouse
 Production data that is streaming from Eventstream.
-
-    Hint: Use accelerated shortcuts for static data
+<details>
+<summary>Hint!</summary>
+Use accelerated shortcuts for static data
+</details>
 
 ## 3. Ingest Shipping data
 Shipping events are pushed to an Azure blob storage in real-time
+<details>
+<summary>Hint!</summary>
+Use Continuous ingestion from Azure Storage
+</details>
 
-    Hint: Use Continuous ingestion from Azure Storage
 Shipping provider details from GitHub assets
-
-    Hint: Use Local file ingestion method
+<details>
+<summary>Hint!</summary>
+Use Local file ingestion method
+</details>
 
 ## 4. Ingest Products data 
 This static data is present in a SQL database
-    Hint: Use Azure SQL CDC connector
+<details>
+<summary>Hint!</summary>
+Use Azure SQL CDC connector
+</details>
 
 ## 5. Make weather data available to all Fabrikam distributors and setup hourly alerts for US region
-    Hint: Create derived stream
-    Hint: Use Activator alerts on temperature
-
-
-
+<details>
+<summary>Hint!</summary>
+Create derived stream, Activator alerts on temperature
+</details>
 
