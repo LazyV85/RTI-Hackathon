@@ -11,23 +11,30 @@ For running this Act,
 ## Challenges 
 
 # Setup Data Agent with Real-Time Intelligence
-    
-    Hint : Connect with all main tables of Eventhouse 
 Find out the following details from AgentS
 1. What is the most popular product?
 2. Which website redirected the highest traffic?
 
+<details>
+<summary>Hint!</summary>
 
-    Hint: Be sure to provide AI instructions to the Agent.
+Connect with all main tables of Eventhouse 
+
+Be sure to provide AI instructions to the Agent.
+</details>
 
 <img src="../Assets/Agent Answers.png" alt="Alt text" width="1000"/>
 
-# Setup forecast of on average temperature for defective products. We want to forecast the temperature. 
-    Hint: Use  forecasting capability of KQL
+# Setup forecast of on average temperature for defective products. We want to forecast the temperature.
+
+<details>
+<summary>Hint!</summary>
+Use  forecasting capability of KQL
+</details>
 
 # Congratulations! You saved Fabrikam! 
 Fabrikam has now all the following information that immensely helps reduce operational risks and increase revenue. 
-Let`s recap what you`ve done:
+Let\`s recap what you\`ve done:
 1. You`ve setup a robust data estate.
 2. You`ve stopped defective products from shipping, stopping customer dissatisfaction.
 3. You`ve created proactive operator alerts to take action on defective production lines.
