@@ -28,24 +28,27 @@ Keep all fields excepts the last 3: EventProcessedUtcTime, PartitionId, EventEnq
 </details>
 
 ### 2. Ingest Manufacturing data
-Assets, Operators, and sites are static data you need refer from Lakehouse
+Assets, Operators, and sites are static data you need refer from Lakehouse.
+
 Production data that is streaming from Eventstream.
+
 <details>
 <summary>Hint!</summary>
 Use accelerated shortcuts for static data
 </details>
 
 ## 3. Ingest Shipping data
-Shipping events are pushed to an Azure blob storage in real-time
-<details>
-<summary>Hint!</summary>
-Use Continuous ingestion from Azure Storage
-</details>
+Shipping events are pushed to an Azure blob storage in real-time.
 
-Shipping provider details from GitHub assets
+Shipping provider details from GitHub assets.
+
 <details>
 <summary>Hint!</summary>
+
+Use Continuous ingestion from Azure Storage
+
 Use Local file ingestion method
+
 </details>
 
 ## 4. Ingest Products data 
