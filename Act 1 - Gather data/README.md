@@ -13,7 +13,7 @@ For running this Act,
 
 ## Challenges 
 
-### 1. Enrich Manufacturing data with AnomalyFlag column and datatype changes
+## 1. Enrich Manufacturing data with AnomalyFlag column and datatype changes
 <details>
 <summary>Hint!</summary>
 
@@ -27,7 +27,7 @@ Keep all fields excepts the last 3: EventProcessedUtcTime, PartitionId, EventEnq
 
 </details>
 
-### 2. Ingest Manufacturing data
+## 2. Ingest Manufacturing data
 Assets, Operators, and sites are static data you need refer from Lakehouse.
 
 Production data that is streaming from Eventstream.
