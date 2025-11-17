@@ -43,8 +43,21 @@ Setup everyday pipeline to run updates
 
 </details>
 
-## 3. Setup forecast of on average temperature for defective products. We want to forecast the temperature.
+## 3. Create a “Growth Opportunity” Report
+1. Create a Power BI report that shows the following information
+2. Filters – Time, and Products
+3. Card Visuals – In-demand product, Website with Highest traffic
+4. Time charts - Product clicks over time, Products bought over time
+5. Pie charts – Website traffic distribution, Device traffic distribution
 <details>
 <summary>Hint!</summary>
-Use  forecasting capability of KQL
+
+Create a new blank Power Bi report and build all the visuals there.
+
+You`ll need to create measures for In demand Products and Highest Traffic.
+
+Here is an example of what the "Growth Opportunity" Report could look like
+
+<img src="../Assets/growthOpportunityReport.png" alt="Alt text" width="1000"/>
+
 </details>
