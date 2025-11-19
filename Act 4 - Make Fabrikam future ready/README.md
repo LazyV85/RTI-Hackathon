@@ -7,27 +7,34 @@ Now that you have setup Fabrikam for success, next step is to make it future rea
 For running this Act, 
 1. You will need access to create Data Agents and AI Anomaly detector. 
 2. You will need knowledge of Kusto Query Language (KQL) to analyze the data.
+3. Power BI to create reports.
 
 ## Challenges 
 
-# Setup Data Agent with Real-Time Intelligence
-    
-    Hint : Connect with all main tables of Eventhouse 
+## 1. Setup forecast of on average temperature for defective products. We want to forecast the temperature.
+<details>
+<summary>Hint!</summary>
+Use  forecasting capability of KQL
+</details>
+
+## 2. Setup Data Agent with Real-Time Intelligence
 Find out the following details from AgentS
 1. What is the most popular product?
 2. Which website redirected the highest traffic?
 
+<details>
+<summary>Hint!</summary>
 
-    Hint: Be sure to provide AI instructions to the Agent.
+Connect with all main tables of Eventhouse 
+
+Be sure to provide AI instructions to the Agent.
+</details>
 
 <img src="../Assets/Agent Answers.png" alt="Alt text" width="1000"/>
 
-# Setup forecast of on average temperature for defective products. We want to forecast the temperature. 
-    Hint: Use  forecasting capability of KQL
-
 # Congratulations! You saved Fabrikam! 
 Fabrikam has now all the following information that immensely helps reduce operational risks and increase revenue. 
-Let`s recap what you`ve done:
+Let\`s recap what you\`ve done:
 1. You`ve setup a robust data estate.
 2. You`ve stopped defective products from shipping, stopping customer dissatisfaction.
 3. You`ve created proactive operator alerts to take action on defective production lines.
@@ -36,9 +43,3 @@ Let`s recap what you`ve done:
 6. You`ve created Agents to help business find most happening products to help them market better, adjust the cost and stock these better.
 7. You`ve setup forecasting for defective products.
 8. You`ve enabled the entire organization to have access to weather data helping them plan their shipping precisely.
-
-
-
-
-
-
