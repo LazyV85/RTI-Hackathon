@@ -5,11 +5,11 @@ Currently Fabrikam’s data estate and pipelines are heavily fragmented. Hack yo
 
 ## Setup
 For running this Act, 
-1. You will need Eventstream, Eventhouse and Azure blob storage. 
-2. Use the attached "Manufacturing Simulator" notebook to generate manufacturing/production data. The notebook will generate data and push it to an Eventstream that you can configure. 
-3. Assets, Operators and Sites data will be generated in the Lakehouse.
-4. Use the attached "Shipping Simulator" notebook to generate shipping data. The notebook will generate data and push it to an Azure blob storage that you can configure. 
-5. Assets, Operators and Sites data is available in the Lakehouse.
+1. You will need three Eventstreams, one Eventhouse, one Lakehouse, and one Azure storage account.
+2. Required Notebooks and CSV file are found in the Data Simulators folder in this repo.
+3. Use the "Shipping Simulator" notebook to generate shipping data. The notebook will generate data and push it to an Azure blob storage that you can configure. 
+4. Use the "Manufacturing Simulator" notebook to generate manufacturing/production data. The notebook will generate data and push it to an Eventstream that you can configure while static Assets, Operators, and Sites data will be generated in the default Lakehouse connected to the Notebook.
+
 
 ## Challenges 
 
@@ -40,7 +40,7 @@ Example:
 SELECT <columns>, (CASE WHEN <Rule> THEN <a> ELSE <b> END) as <column name> INTO [<Target name>] FROM [<source name>]
 ```
 
-The ManageFields block selects which columns to keep.
+The ManageFields block selects which columns to keep and change datatype if needed.
 
 <img src="../Assets/Manufacturing-eventstream.png" width="1200">
 </details>
@@ -61,7 +61,7 @@ This is a two-part process since Accelerated shortcuts only work on tables in a 
 
 Separate files with different schemas into subfolders.
 
-Follow the build-in guides to create table shortcuts in the lakehouse from the csv files then create accelerated shortcuts in the eventhouse.
+Follow the build-in wizards to create table shortcuts in the lakehouse from the csv files then create accelerated shortcuts in the eventhouse.
 
 Lakehouse shortcut:
 
@@ -88,11 +88,11 @@ Use Local file ingestion method for Shipping provider details
 <details>
 <summary>Guide</summary>
 
-From the Eventhouse Database select azure storage from Get data and follow the guide:
+From the Eventhouse Database select azure storage from Get data and follow the wizard:
 
 <img src="../Assets/storageaccount-continuous-ingestion.png" width="300">
 
-From the Eventhouse Database select local file from Get Data and follow the guide:
+From the Eventhouse Database select local file from Get Data and follow the wizard:
 
 <img src="../Assets/local-files.png" width="300">
 </details>
