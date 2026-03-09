@@ -13,11 +13,56 @@ For running this Act,
 ## 1. Get Latest Shipping details
 <details>
 <summary>Hint!</summary>
-
-Use update policy to parse xml into silver table
+Use update policy to parse xml into silver table.
 
 Use Materialized View to get latest status details for each OrderNumber
+<details>
+<summary>Guide</summary>
+Start by writing a query that gives the desired output from the source table.(KQL has a built-in function to parse xml)
 
+Creating a new column that contains the output of a parse xml is recommended.
+
+Then create the target table based on the query like shown in the example below.
+
+```KQL
+.set <target table> <|
+<source table>
+| <conditions>(where/extend)
+| <output>(project/project-away/project-reorder)
+```
+
+The following codesnippet shows an example of how to create a fuction/updatepolicy in a KQL database.
+
+```KQL
+.create function
+ with (docstring = '<Function description>', folder = 'UpdatePolicyFunctions')
+     <function name>()
+    {
+    <source table>
+    | <conditions>(where/extend)
+    | <output>(project/project-away/project-reorder)
+}
+
+.alter table <target table> policy update
+@'[{ "IsEnabled": true, "Source": "<source table>", "Query": "<function name>()", "IsTransactional": false, "PropagateIngestionProperties": true}]'
+```
+
+The following codesnippet shows how to create a materialized view that shows the latest row based on a group by and order by column.
+
+Materialized views require summarize as the last output and this line cannot be changed after the view is created.
+
+The backfill option creates a view on all the data on the source table. Without this option only new rows will be added to the materialized view.
+
+The async option creates a background operation that prevents the creation from failing if the source data is to large(over 500.000 rows or 64MB of data).
+
+```KQL
+.create async materialized-view with(backfill=true) <Materialized view name> on table <Source table>{
+<Source table>
+| <conditions>(where/extend)
+| summarize arg_max(<Order by column>, <column(s) to include>) by <Group by column>
+}
+```
+</details>
 </details>
 
 ## 2. Stop the shipping providers  and production line that is carrying the highest defect probability product for every 1 hour
